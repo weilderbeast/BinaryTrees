@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BinaryTreeADT<T> {
+public class BinaryTree<T> {
 
     private BinaryTreeNode<T> root;
     private int size;

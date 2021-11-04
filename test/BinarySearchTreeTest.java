@@ -1,4 +1,4 @@
-import com.company.BinarySearchTreeADT;
+import com.company.BinarySearchTree;
 import com.company.BinaryTreePrint;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,13 +10,13 @@ import java.util.Random;
 
 public class BinarySearchTreeTest {
     private BinaryTreePrint print;
-    private BinarySearchTreeADT<Integer> treeInt;
-    private BinarySearchTreeADT<String> treeStr;
+    private BinarySearchTree<Integer> treeInt;
+    private BinarySearchTree<String> treeStr;
 
     @BeforeEach
     void setUp() {
         print = new BinaryTreePrint();
-        treeInt = new BinarySearchTreeADT<>();
+        treeInt = new BinarySearchTree<>();
 
         treeInt.insert(7);
         treeInt.insert(2);
@@ -29,7 +29,7 @@ public class BinarySearchTreeTest {
         treeInt.insert(17);
         //print.printTree(treeInt.getRoot());
 
-        treeStr = new BinarySearchTreeADT<>();
+        treeStr = new BinarySearchTree<>();
 
         treeStr.insert("Pupak");
         treeStr.insert("Saldanha");
@@ -160,7 +160,7 @@ public class BinarySearchTreeTest {
 
     @Test
     void removeRootElement() {
-        treeInt = new BinarySearchTreeADT<>();
+        treeInt = new BinarySearchTree<>();
         treeInt.insert(10);
 
         print.printTree(treeInt.getRoot());
@@ -193,7 +193,7 @@ public class BinarySearchTreeTest {
     @Test
     void rebalancedHeight() {
         for (int i = 0; i < 10; i++){
-            BinarySearchTreeADT<Integer> tree = generateBST();
+            BinarySearchTree<Integer> tree = generateBST();
 
             print.printTree(tree.getRoot());
             System.out.println();
@@ -214,7 +214,7 @@ public class BinarySearchTreeTest {
     @Test
     void rebalance() {
         for (int i = 0; i < 10; i++){
-            BinarySearchTreeADT<Integer> searchTree = generateBST();
+            BinarySearchTree<Integer> searchTree = generateBST();
             System.out.println("BEFORE REBALANCE:");
             print.printTree(searchTree.getRoot());
             System.out.println();
@@ -227,8 +227,8 @@ public class BinarySearchTreeTest {
         }
     }
 
-    private BinarySearchTreeADT<Integer> generateBST(){
-        BinarySearchTreeADT<Integer> searchTree = new BinarySearchTreeADT<>();
+    private BinarySearchTree<Integer> generateBST(){
+        BinarySearchTree<Integer> searchTree = new BinarySearchTree<>();
         Random random = new Random();
 
         int size = random.nextInt(100);

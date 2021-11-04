@@ -1,4 +1,4 @@
-import com.company.BinaryTreeADT;
+import com.company.BinaryTree;
 import com.company.BinaryTreeNode;
 import com.company.BinaryTreePrint;
 import org.junit.jupiter.api.Assertions;
@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 
 public class BinaryTreeTest {
-    private BinaryTreeADT<Object> tree;
+    private BinaryTree<Object> tree;
     private BinaryTreePrint print;
 
     @BeforeEach
     void setUp() {
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         print = new BinaryTreePrint();
         BinaryTreeNode<Object> node = new BinaryTreeNode<>();
         BinaryTreeNode<Object> node1 = new BinaryTreeNode<>();
@@ -37,7 +37,7 @@ public class BinaryTreeTest {
 
     @Test
     void isEmpty() {
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         Assertions.assertTrue(tree.isEmpty());
 
         tree.setRoot(new BinaryTreeNode<>());
@@ -50,7 +50,7 @@ public class BinaryTreeTest {
     @Test
     void sizeZeroElements() {
         // The root is null
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         Assertions.assertEquals(0,tree.size());
 
         // The root is instantiated but contains no element
@@ -87,7 +87,7 @@ public class BinaryTreeTest {
     @Test
     void emptyTree() {
         //Test if all traversals return null when the tree is empty
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         Assertions.assertNull(tree.inOrder());
         Assertions.assertNull(tree.postOrder());
         Assertions.assertNull(tree.preOrder());
@@ -149,7 +149,7 @@ public class BinaryTreeTest {
 
     @Test
     void heightZero() {
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         BinaryTreeNode<Object> node = new BinaryTreeNode<>();
         node.setElement(23);
         tree.setRoot(node);
@@ -160,7 +160,7 @@ public class BinaryTreeTest {
 
     @Test
     void heightOne() {
-        tree = new BinaryTreeADT<>();
+        tree = new BinaryTree<>();
         BinaryTreeNode<Object> node = new BinaryTreeNode<>();
         node.setElement(32);
         tree.setRoot(node);

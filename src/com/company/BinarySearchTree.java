@@ -1,9 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
-public class BinarySearchTreeADT<T extends Comparable<T>> extends BinaryTreeADT<T> {
+public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
     private BinarySearchTreeNode<T> root;
 
     public void insert(T element) {
